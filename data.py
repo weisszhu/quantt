@@ -9,7 +9,7 @@ sys.setdefaulttencoding('utf-8')
 
 def get_one_stock_data(stock,start_day,end_day):
     w.start()
-    data = w.wsd()
+    data = w.wsd("600000.SH,000001.SZ","eps_ttm,orps,surpluscapitalps","rptDate=20151231")
     one_data = pd.DataFrame()
     one_data['name'] = stock
     one_data['date'] = data.Data[0]
